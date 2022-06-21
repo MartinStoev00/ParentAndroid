@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">A</string>
     <string name="button">Sign in With Google</string>
     <string name="title_activity_main2">MainActivity2</string>
     <!-- Strings used for fragments for navigation -->
