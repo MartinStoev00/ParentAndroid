@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "348413665047",
+    "firebase_url": "https://child-application-36adb-default-rtdb.firebaseio.com",
     "project_id": "child-application-36adb",
     "storage_bucket": "child-application-36adb.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "348413665047-inh8pqfj0cndfpdlqpq4vpmiah3u3uj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "206c7024890c3a1159ce8601f9e33641bc907f7a"
+          }
+        },
         {
           "client_id": "348413665047-55csbh86or34ivdqungiqfiiamepg4av.apps.googleusercontent.com",
           "client_type": 3

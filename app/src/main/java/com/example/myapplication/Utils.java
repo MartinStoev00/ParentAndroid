@@ -124,10 +124,12 @@ public class Utils  {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == aa.RESULT_OK) {
             // Successfully signed in
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            Log.d("signinmartin", "logged in: " + user.getUid());
+            FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
+            Log.d("signinmartin", "logged in: " + user1.getUid());
+            user = FirebaseAuth.getInstance().getCurrentUser();
+            sendData();
         } else {
-            Log.d("signinmartin", response.getError().getErrorCode() + "");
+            Log.d("signinmartin", response.getError().getMessage() + "");
         }
     }
 
@@ -245,15 +247,15 @@ public class Utils  {
         return smss;
     }
 
-//    public void signOut() {
-//        AuthUI.getInstance()
-//                .signOut(this)
-//                .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        // ...
-//                    }
-//                });
-//    }
+    public void signOut() {
+        AuthUI.getInstance()
+                .signOut(aa)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // ...
+                    }
+                });
+    }
 
     private String getDuration(int seconds) {
         int h = seconds / 3600;
@@ -293,18 +295,14 @@ public class Utils  {
 //    }
 
     public void authAndSend() {
-
-        mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
 //        signOut();
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user == null) {
             createSignInIntent();
-            authAndSend();
         } else {
-            Log.d("signinmartin", "is in: " + user.getUid());
+            Log.d("signin", "is in: " + user.getUid());
             sendData();
-//            blockListener();
         }
     }
 }
